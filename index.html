@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divyakirti Flour Mill | Premium Quality Atta & Flours</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Color Palette & Base Styles */
+        :root {
+            --primary-color: #E67E22; /* Warm Gold / Atta Orange */
+            --secondary-color: #D35400; /* Rich Amber */
+            --dark-color: #3E2723; /* Earthy Flour Mill Brown */
+            --light-bg: #FFFDF9; /* Fresh Creamy White */
+            --white: #ffffff;
+            --text-muted: #7f8c8d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* Utility Components */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            position: relative;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--dark-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            margin-left: 25px;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section with Custom Wheat Background */
+        .hero {
+            background: linear-gradient(rgba(62, 39, 35, 0.65), rgba(62, 39, 35, 0.75)), 
+                        url('https://media.istockphoto.com/id/1673457545/photo/farmer-examining-ripe-ear-of-wheat-in-field-before-the-harvest.jpg?s=612x612&w=0&k=20&c=sG-Ro-n-3FmkmbXmWtwpxzYN1kJNMb5x0DbSmzITdVM=') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* About Us Section */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .feature-item i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Pricing & Products Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .price-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border: 1px solid #f1f1f1;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #27ae60;
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .card-img-placeholder {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .card-img-placeholder i {
+            font-size: 3.5rem;
+            opacity: 0.9;
+        }
+
+        .price-card h3 {
+            font-size: 1.4rem;
+            margin: 20px 0 10px 0;
+            color: var(--dark-color);
+        }
+
+        .price-card .tagline {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 0 15px;
+            margin-bottom: 15px;
+        }
+
+        .price-box {
+            background-color: var(--light-bg);
+            padding: 15px 0;
+            margin-bottom: 20px;
+            border-top: 1px solid #f9f6f0;
+            border-bottom: 1px solid #f9f6f0;
+        }
+
+        .price-box .amount {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .price-box .unit {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .price-card ul {
+            list-style: none;
+            padding: 0 20px 25px 20px;
+            text-align: left;
+        }
+
+        .price-card ul li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .price-card ul li i {
+            color: #27ae60;
+            margin-right: 8px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--white);
+        }
+
+        .contact-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-info-card {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 20px;
+            margin-top: 4px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .info-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 3px;
+        }
+
+        .info-item p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+        }
+
+        .btn-call {
+            background-color: #2980b9;
+            box-shadow: 0 4px 15px rgba(41, 128, 185, 0.3);
+        }
+        .btn-call:hover {
+            background-color: #2471a3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: #f1f1f1;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+            border-top: 3px solid var(--primary-color);
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive Design / Phone View Adjustments */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .nav-links {
+                padding-top: 10px;
+            }
+
+            .nav-links li a {
+                margin: 0 10px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .action-buttons .btn {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">DIVYA<span>KIRTI</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#pricing">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Pure & Fresh Chakki Atta</h1>
+            <p>From our offline factory straight to your kitchen. Experience the authentic taste of 100% natural, freshly ground grains.</p>
+            <a href="#pricing" class="btn">View Product Catalog</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Divyakirti</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Welcome to <strong>Divyakirti Flour Mill</strong>, where tradition meets purity. We operate a fully equipped, hygienic offline factory manufacturing premium quality whole wheat flour (Atta) and essential household kitchen flours.</p>
+                    <p>Inspired by India's finest standards, we ensure that our grains are thoroughly cleaned and processed gently to retain their natural nutrition, dietary fibers, and authentic homemade taste.</p>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <i class="fa-solid fa-wheat-awn"></i>
+                            <h4>100% Pure</h4>
+                            <p>No added preservatives or artificial mixing.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-industry"></i>
+                            <h4>Hygienic Factory</h4>
+                            <p>Milled in a clean, state-of-the-art facility.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-heart"></i>
+                            <h4>Healthy & Rich</h4>
+                            <p>Retains natural fiber, softness, and nutrition.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Products Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Our Products & Estimated Pricing</h2>
+            <div class="pricing-grid">
+                
+                <!-- Card 1: Premium Atta Packs -->
+                <div class="price-card">
+                    <span class="badge">Chakki Fresh</span>
+                    <div class="card-img-placeholder">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3>Chakki Fresh Atta Packs</h3>
+                    <p class="tagline">Premium whole wheat flour ground to perfection for soft, delicious rotis.</p>
+                    <div class="price-box">
+                        <span class="amount">₹175 - ₹1,050</span>
+                        <span class="unit">Estimated Range</span>
+                    </div>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>5 kg Pack:</strong> ~ ₹175</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>25.100 kg Pack:</strong> ~ ₹880</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>30 kg Pack:</strong> ~ ₹1050</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Pure Besan -->
+                <div class="price-card">
+                    <div class="card-img-placeholder" style="background: linear-gradient(45deg, #e67e22, #d35400);">
+                        <i class="fa-solid fa-bowl-rice"></i>
+                    </div>
+                    <h3>Premium Besan</h3>
+                    <p class="tagline">100% pure chana dal flour perfect for traditional snacks and sweets.</p>
+                    <div class="price-box">
+                        <span class="amount">₹45</span>
+                        <span class="unit">/ 500gm Packet</span>
+                    </div>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> High quality stone-ground Chana Dal</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Untouched, clean packaging</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Ideal for Ladoos, Pakodas & Missi Roti</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Kitchen Essentials -->
+                <div class="price-card">
+                    <div class="card-img-placeholder" style="background: linear-gradient(45deg, #d35400, #3e2723);">
+                        <i class="fa-solid fa-cubes-stacked"></i>
+                    </div>
+                    <h3>Kitchen Essentials</h3>
+                    <p class="tagline">Finely processed maida, sooji, rava, and high-fiber daliya packs.</p>
+                    <div class="price-box">
+                        <span class="amount">₹25 - ₹35</span>
+                        <span class="unit">/ 500gm Packet</span>
+                    </div>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Maida & Sooji:</strong> 500gm pack</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Rava & Daliya:</strong> 500gm pack</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Freshly packed at our factory desk</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Factory Location & Contact</h2>
+            <div class="contact-wrapper">
+                
+                <div class="contact-info-card">
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Factory Address</h4>
+                            <p><strong>DIVYAKIRTI Flour Mill</strong><br>
+                            Plot no 57-58-59, Industrial Area, Naugaon,<br>
+                            Bina, Bina Railway Colony, <br>
+                            Madhya Pradesh 470113</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <h4>Factory Timings</h4>
+                            <p>Monday - Saturday: 9:00 AM - 8:00 PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-bell"></i>
+                        <div>
+                            <h4>Note on Pricing</h4>
+                            <p>Prices fluctuate based on wholesale grain market values. Contact us below for exact bulk pricing today.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fast Mobile Action Buttons -->
+                <div class="action-buttons">
+                    <!-- Replace with your real phone number -->
+                    <a href="tel:+91919243339502" class="btn btn-call"><i class="fa-solid fa-phone"></i> Call Factory Desk</a>
+                    <!-- Replace with your real WhatsApp link number -->
+                    <a href="https://wa.me/+919243339502?text=Hello%20Divyakirti%20Flour%20Mill,%20I%20want%20to%20inquire%20about%20Atta%20and%20Flour%20pricing." target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Order via WhatsApp</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 DIVYAKIRTI Flour Mill. All Rights Reserved.</p>
+        <p style="font-size: 0.75rem; margin-top: 5px; opacity: 0.5;">Pure Nutrition, Trusted Quality.</p>
+    </footer>
+
+</body>
+</html>
