@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divyakirti Flours | Pushplaxmi Technopure Pvt Ltd</title>
+    <title>Divyakirti & Divyashree Flours | Pushplaxmi Technopure Pvt Ltd</title>
     <!-- Meta tags for Search Indexing -->
-    <meta name="description" content="Pushplaxmi Technopure Pvt Limited manufactures Divyakirti Flours. Premium quality Chakki Fresh Atta, Besan, Maida, Sooji, Rawa, and Daliya from Bina, MP.">
-    <meta name="keywords" content="Pushplaxmi Technopure, Divyakirti Atta, Flour Mill Bina, Chakki Fresh Atta, Pure Besan, Maida, Sooji, Daliya">
+    <meta name="description" content="Pushplaxmi Technopure Pvt Limited manufactures Divyakirti & Divyashree Flours. Chakki Fresh Atta, Pure Besan (500g, 35kg loose), Maida, Sooji, Rawa, and Daliya from Bina, MP.">
+    <meta name="keywords" content="Pushplaxmi Technopure, Divyakirti Atta, Divyashree Atta, Flour Mill Bina, Chakki Fresh Atta, Loose Besan 35kg, Pure Besan, Maida, Sooji, Daliya">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -49,7 +49,7 @@
         .section-title {
             text-align: center;
             font-size: 2.2rem;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
             position: relative;
             font-weight: 700;
             color: var(--dark-color);
@@ -63,6 +63,17 @@
             background: var(--primary-color);
             margin: 10px auto 0 auto;
             border-radius: 2px;
+        }
+
+        .category-heading {
+            font-size: 1.45rem;
+            color: var(--dark-color);
+            margin: 40px 0 20px 0;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         /* Header / Navbar */
@@ -108,15 +119,16 @@
         .nav-links {
             display: flex;
             list-style: none;
+            gap: 20px;
         }
 
         .nav-links li a {
             text-decoration: none;
             color: var(--dark-color);
             font-weight: 600;
-            margin-left: 25px;
             transition: color 0.3s ease;
             font-size: 0.95rem;
+            white-space: nowrap;
         }
 
         .nav-links li a:hover {
@@ -145,7 +157,7 @@
         .hero-content p {
             font-size: 1.15rem;
             margin-bottom: 25px;
-            max-width: 600px;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -191,15 +203,32 @@
             margin-bottom: 10px;
         }
 
-        /* Product Cards */
-        .pricing-grid {
+        /* Product Grids */
+        .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             align-items: stretch;
         }
 
-        .price-card {
+        /* 2-column centered layout for Besan */
+        .products-grid-two {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 450px));
+            gap: 30px;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        /* 4-column layout for Kitchen Staples */
+        .products-grid-four {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .product-card {
             background-color: var(--white);
             border-radius: 16px;
             overflow: hidden;
@@ -212,7 +241,7 @@
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .price-card:hover {
+        .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 28px rgba(0,0,0,0.09);
         }
@@ -232,102 +261,65 @@
 
         .card-img-container {
             background: #faf6f0;
-            padding: 24px 20px 10px 20px;
+            padding: 24px 20px 15px 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 260px;
+            min-height: 250px;
         }
 
         .card-img-container img {
-            max-height: 230px;
+            max-height: 220px;
             max-width: 100%;
             object-fit: contain;
             filter: drop-shadow(0 6px 10px rgba(0,0,0,0.12));
             transition: transform 0.3s ease;
         }
 
-        .price-card:hover .card-img-container img {
+        .product-card:hover .card-img-container img {
             transform: scale(1.04);
         }
 
-        /* 4-Staple Grid Presentation */
-        .staples-mosaic {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            padding: 12px;
-            width: 100%;
-        }
-
-        .staple-tile {
-            background: #fff;
-            border-radius: 10px;
-            padding: 8px 6px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 1px solid #eee5db;
-        }
-
-        .staple-tile img {
-            max-height: 100px !important;
-            width: auto;
-        }
-
-        .staple-tile span {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin-top: 4px;
-        }
-
-        .price-card h3 {
-            font-size: 1.3rem;
+        .product-card h3 {
+            font-size: 1.25rem;
             margin: 18px 15px 6px 15px;
             color: var(--dark-color);
         }
 
-        .price-card .tagline {
+        .product-card .tagline {
             font-size: 0.85rem;
             color: var(--text-muted);
-            padding: 0 20px;
+            padding: 0 16px;
             margin-bottom: 12px;
         }
 
-        .price-box {
-            background-color: var(--light-bg);
-            padding: 12px 0;
-            margin-bottom: 15px;
-            border-top: 1px solid #f9f6f0;
-            border-bottom: 1px solid #f9f6f0;
-        }
-
-        .price-box .amount {
-            font-size: 1.6rem;
-            font-weight: 700;
+        .product-card .pack-size-pill {
+            display: inline-block;
+            align-self: center;
+            background: #fdf2e9;
             color: var(--secondary-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+            border: 1px solid #fae5d3;
         }
 
-        .price-box .unit {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .price-card ul {
+        .product-card ul {
             list-style: none;
-            padding: 0 22px 22px 22px;
+            padding: 0 20px 22px 20px;
             text-align: left;
             margin-top: auto;
         }
 
-        .price-card ul li {
+        .product-card ul li {
             margin-bottom: 7px;
-            font-size: 0.88rem;
+            font-size: 0.87rem;
             color: #555;
         }
 
-        .price-card ul li i {
+        .product-card ul li i {
             color: #27ae60;
             margin-right: 8px;
         }
@@ -394,10 +386,22 @@
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px;
+                padding: 10px 2%;
+            }
+            .nav-links {
+                justify-content: center;
+                gap: 12px;
+                padding-top: 5px;
+            }
+            .nav-links li a {
+                font-size: 0.85rem;
             }
             .hero-content h1 {
                 font-size: 2.1rem;
+            }
+            .products-grid-two {
+                grid-template-columns: 1fr;
             }
             .action-buttons {
                 flex-direction: column;
@@ -419,8 +423,8 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#pricing">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -429,9 +433,9 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Pure & Fresh Chakki Atta</h1>
-            <p>Premium quality kitchen flours from our hygienic offline factory straight to your home.</p>
-            <a href="#pricing" class="btn">View Product Catalog</a>
+            <h1>DIVYAKIRTI FOODS</h1>
+            <p>Premium quality flour from our hygienic manufacturing plant straight to your kitchen.</p>
+            <a href="#products" class="btn">View Product Catalog</a>
         </div>
     </section>
 
@@ -441,8 +445,8 @@
             <h2 class="section-title">About Our Factory</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p><strong>DIVYAKIRTI</strong> is a trusted consumer brand manufactured and managed under our corporate parent enterprise, <strong>Pushplaxmi Technopure Pvt Limited</strong>. We operate a highly hygienic, fully mechanical offline factory focused on providing nutritious kitchen flours to households and wholesalers alike.</p>
-                    <p>By blending traditional stone-ground milling principles with state-of-the-art cleaning machinery, we ensure that every batch retains its natural grain fibers, core nutrients, and authentic taste profile.</p>
+                    <p><strong>DIVYAKIRTI</strong> and <strong>DIVYASHREE</strong> are consumer and commercial brands manufactured under <strong>Pushplaxmi Technopure Pvt Limited</strong>. We operate an automated, fully mechanical milling unit delivering nutritious flours to retail homes and wholesale markets.</p>
+                    <p>By blending traditional stone-ground milling principles with industrial cleaning machinery, every batch retains its natural grain fibers, core nutrients, and authentic purity.</p>
                     
                     <div class="features">
                         <div class="feature-item">
@@ -453,12 +457,12 @@
                         <div class="feature-item">
                             <i class="fa-solid fa-industry"></i>
                             <h4>Technopure Milling</h4>
-                            <p>Processed in our modern, automated industrial unit.</p>
+                            <p>Processed in our automated industrial plant in Bina.</p>
                         </div>
                         <div class="feature-item">
                             <i class="fa-solid fa-heart"></i>
                             <h4>Dietary Fiber</h4>
-                            <p>Carefully milled to keep natural grain nutrients intact.</p>
+                            <p>Milled carefully to preserve natural wheat and dal nutrients.</p>
                         </div>
                     </div>
                 </div>
@@ -466,94 +470,189 @@
         </div>
     </section>
 
-    <!-- Pricing / Products Section -->
-    <section id="pricing" class="pricing">
+    <!-- Products Section -->
+    <section id="products" class="products">
         <div class="container">
-            <h2 class="section-title">Our Products & Estimated Pricing</h2>
-            <div class="pricing-grid">
+            <h2 class="section-title">Our Product Range</h2>
+
+            <!-- Category 1: Atta -->
+            <div class="category-heading">
+                <i class="fa-solid fa-wheat-awn" style="color: var(--primary-color);"></i>
+                <span>Chakki Atta Category</span>
+            </div>
+            <div class="products-grid">
                 
-                <!-- Card 1: Atta 5Kg -->
-                <div class="price-card">
-                    <span class="badge">100% Whole Wheat</span>
+                <!-- Divyakirti 5kg -->
+                <div class="product-card">
+                    <span class="badge">Retail Pack</span>
                     <div class="card-img-container">
                         <img src="atta-5kg.png" alt="Divyakirti Chakki Atta 5kg">
                     </div>
                     <h3>Divyakirti Chakki Atta</h3>
-                    <p class="tagline">Rich in fibre & protein, ground from MP wheat for soft rotis.</p>
-                    <div class="price-box">
-                        <span class="amount">₹250</span>
-                        <span class="unit">/ 5 kg Pack</span>
-                    </div>
+                    <p class="tagline">100% whole wheat flour ground from premium MP wheat grains.</p>
+                    <div class="pack-size-pill">5 kg Retail Bag</div>
                     <ul>
-                        <li><i class="fa-solid fa-circle-check"></i> 100% MP Wheat, Zero Maida</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Rich in natural fibre & protein</li>
                         <li><i class="fa-solid fa-circle-check"></i> Long-lasting roti softness</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Hygienically sealed 5kg retail bag</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Zero maida, zero added preservatives</li>
                     </ul>
                 </div>
 
-                <!-- Card 2: Pure Besan -->
-                <div class="price-card">
-                    <span class="badge">100% Chana Dal</span>
+                <!-- Divyakirti 30kg -->
+                <div class="product-card">
+                    <span class="badge">Wholesale Pack</span>
                     <div class="card-img-container">
-                        <img src="besan-500g.png" alt="Divyakirti Pure Besan">
+                        <img src="Divyakirti-30kg.png" alt="Divyakirti Chakki Atta 30kg">
                     </div>
-                    <h3>Divyakirti Pure Besan</h3>
-                    <p class="tagline">Premium quality gram flour ground from select chana dal.</p>
-                    <div class="price-box">
-                        <span class="amount">₹60</span>
-                        <span class="unit">/ 500gm Pack</span>
-                    </div>
+                    <h3>Divyakirti-30kg</h3>
+                    <p class="tagline">Commercial Chakki Atta packaging for bulk requirements.</p>
+                    <div class="pack-size-pill">30 kg Commercial Bag</div>
                     <ul>
-                        <li><i class="fa-solid fa-circle-check"></i> Pure stone-ground chana dal</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Fine texture for sweets, snacks & pakodas</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Nitrogen-flushed moisture seal</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Standardised grain quality for bulk buyers</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Durable, heavy-duty moisture-resistant bag</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Direct factory supply from Bina unit</li>
                     </ul>
                 </div>
 
-                <!-- Card 3: 4 Kitchen Staples Mosaic -->
-                <div class="price-card">
-                    <span class="badge">Kitchen Staples</span>
-                    <div class="card-img-container" style="padding: 10px;">
-                        <div class="staples-mosaic">
-                            <div class="staple-tile">
-                                <img src="maida-500g.png" alt="Divyakirti Maida">
-                                <span>Maida</span>
-                            </div>
-                            <div class="staple-tile">
-                                <img src="sooji-500g.png" alt="Divyakirti Sooji">
-                                <span>Sooji</span>
-                            </div>
-                            <div class="staple-tile">
-                                <img src="rawa-500g.png" alt="Divyakirti Rawa">
-                                <span>Rawa</span>
-                            </div>
-                            <div class="staple-tile">
-                                <img src="daliya-500g.png" alt="Divyakirti Daliya">
-                                <span>Daliya</span>
-                            </div>
-                        </div>
+                <!-- Divyashree 25kg -->
+                <div class="product-card">
+                    <span class="badge">Gold Grade</span>
+                    <div class="card-img-container">
+                        <img src="Divyashree-25kg.png" alt="Divyashree Gold Chakki Atta 25kg">
                     </div>
-                    <h3>Kitchen Essentials</h3>
-                    <p class="tagline">High-grade semolina, refined flour, and MP durum wheat daliya.</p>
-                    <div class="price-box">
-                        <span class="amount">₹30 - ₹40</span>
-                        <span class="unit">/ 500gm Pack</span>
-                    </div>
+                    <h3>Divyashree-25kg</h3>
+                    <p class="tagline">Divyashree Gold traditional Chakki fresh whole wheat flour.</p>
+                    <div class="pack-size-pill">25 kg (25.100 kg) Bag</div>
                     <ul>
-                        <li><i class="fa-solid fa-circle-check"></i> <strong>Maida & Sooji:</strong> 500g retail packs</li>
-                        <li><i class="fa-solid fa-circle-check"></i> <strong>Rawa & Daliya:</strong> High-fibre nutrition</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Processed untouched by hand</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Direct from selected MP wheat sources</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Traditional stone-process ground</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Ideal for restaurants, caterers & distributors</li>
                     </ul>
                 </div>
 
             </div>
+
+            <!-- Category 2: Besan (Dedicated Separate Category) -->
+            <div class="category-heading">
+                <i class="fa-solid fa-bowl-rice" style="color: var(--primary-color);"></i>
+                <span>Pure Besan Category</span>
+            </div>
+            <div class="products-grid-two">
+                
+                <!-- Divyakirti Besan 500g -->
+                <div class="product-card">
+                    <span class="badge">Retail Pack</span>
+                    <div class="card-img-container">
+                        <img src="besan-500g.png" alt="Divyakirti Pure Besan 500g">
+                    </div>
+                    <h3>Divyakirti Pure Besan</h3>
+                    <p class="tagline">100% pure chana dal gram flour for daily culinary dishes.</p>
+                    <div class="pack-size-pill">500 gm Retail Pack</div>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> Pure stone-ground chana dal</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Uniform texture for sweets, snacks & pakodas</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Moisture-proof pouch</li>
+                    </ul>
+                </div>
+
+                <!-- Divyashree Besan 35kg Loose -->
+                <div class="product-card">
+                    <span class="badge">Commercial Loose Supply</span>
+                    <div class="card-img-container">
+                        <img src="Besan-35kg-loose.png" alt="Divyashree Besan 35kg Loose Pack">
+                    </div>
+                    <h3>Besan-35kg-loose</h3>
+                    <p class="tagline">Commercial bulk packaging under Divyashree branding.</p>
+                    <div class="pack-size-pill">35 kg Commercial Loose Bag</div>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> Pure chana dal basen for large-scale production</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Specially milled for halwais & namkeen units</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Durable heavy woven sack packaging</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Category 3: Kitchen Essentials (Dedicated Separate Category) -->
+            <div class="category-heading">
+                <i class="fa-solid fa-boxes-stacked" style="color: var(--primary-color);"></i>
+                <span>Kitchen Essentials</span>
+            </div>
+            <div class="products-grid-four">
+                
+                <!-- Maida -->
+                <div class="product-card">
+                    <span class="badge">Premium</span>
+                    <div class="card-img-container">
+                        <img src="maida-500g.png" alt="Divyakirti Maida 500g">
+                    </div>
+                    <h3>Divyakirti Maida</h3>
+                    <p class="tagline">Finely refined wheat flour.</p>
+                    <div class="pack-size-pill">500 gm Pack</div>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> Super fine texture</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Ideal for bakery & snacks</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Untouched by hand</li>
+                    </ul>
+                </div>
+
+                <!-- Sooji -->
+                <div class="product-card">
+                    <span class="badge">Pure</span>
+                    <div class="card-img-container">
+                        <img src="sooji-500g.png" alt="Divyakirti Sooji 500g">
+                    </div>
+                    <h3>Divyakirti Sooji</h3>
+                    <p class="tagline">Granulated wheat semolina.</p>
+                    <div class="pack-size-pill">500 gm Pack</div>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> Perfectly granulated</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Great for halwa & upma</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Fresh grain aroma</li>
+                    </ul>
+                </div>
+
+                <!-- Rawa -->
+                <div class="product-card">
+                    <span class="badge">Fresh</span>
+                    <div class="card-img-container">
+                        <img src="rawa-500g.png" alt="Divyakirti Rawa 500g">
+                    </div>
+                    <h3>Divyakirti Rawa</h3>
+                    <p class="tagline">High-grade fine semolina.</p>
+                    <div class="pack-size-pill">500 gm Pack</div>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> Crisp, even texture</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Perfect for idli & dosa</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Hygienically sealed</li>
+                    </ul>
+                </div>
+
+                <!-- Daliya -->
+                <div class="product-card">
+                    <span class="badge">High Fiber</span>
+                    <div class="card-img-container">
+                        <img src="daliya-500g.png" alt="Divyakirti Daliya 500g">
+                    </div>
+                    <h3>Divyakirti Daliya</h3>
+                    <p class="tagline">Durum broken wheat.</p>
+                    <div class="pack-size-pill">500 gm Pack</div>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> 100% MP Durum Wheat</li>
+                        <li><i class="fa-solid fa-circle-check"></i> High dietary fiber</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Nutritious & wholesome</li>
+                    </ul>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Factory Location & Contact</h2>
+            <h2 class="section-title">Factory Location & Inquiries</h2>
             <div class="contact-info-card">
                 <div class="info-item">
                     <i class="fa-solid fa-building"></i>
@@ -582,16 +681,16 @@
                 </div>
 
                 <div class="info-item">
-                    <i class="fa-solid fa-bell"></i>
+                    <i class="fa-solid fa-handshake"></i>
                     <div>
-                        <h4>Note on Pricing</h4>
-                        <p>Prices fluctuate based on wholesale grain market values. Contact us below for exact bulk pricing today.</p>
+                        <h4>Wholesale & Retail Orders</h4>
+                        <p>Direct supply available for retailers, distributors, and bulk purchasers across MP. Contact factory dispatch below.</p>
                     </div>
                 </div>
 
                 <div class="action-buttons">
                     <a href="tel:+919243339502" class="btn btn-call"><i class="fa-solid fa-phone"></i> Call Factory Desk</a>
-                    <a href="https://wa.me/+919243339502?text=Hello%20Divyakirti%20Flour%20Mill,%20I%20want%20to%20inquire%20about%20Atta%20and%20Flour%20pricing." target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Order via WhatsApp</a>
+                    <a href="https://wa.me/+919243339502?text=Hello%20Pushplaxmi%20Flour%20Mill,%20I%20am%20interested%20in%20inquiring%20about%20Divyakirti%20and%20Divyashree%20products." target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Order via WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -600,7 +699,7 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Pushplaxmi Technopure Pvt Limited. All Rights Reserved.</p>
-        <p style="font-size: 0.75rem; margin-top: 5px; opacity: 0.5;">Divyakirti Flours — Pure Nutrition, Trusted Quality.</p>
+        <p style="font-size: 0.75rem; margin-top: 5px; opacity: 0.5;">Divyakirti & Divyashree — Pure Nutrition, Trusted Quality.</p>
     </footer>
 
 </body>
